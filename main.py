@@ -15,7 +15,10 @@ screen = pygame.display.set_mode(windowSize)
 edaLogoLarge = pygame.image.load("static/eda-icon.png")
 
 # New width and height will be (50, 30).
-edaLogo = pygame.transform.scale(edaLogoLarge, (150, 105))
+edaLogo = pygame.transform.scale(edaLogoLarge, (100, 70))
+
+# Get the size of the logo item
+edaLogoSize = edaLogo.get_size()
 
 # Define starting coordinates and starting movement directions for the logo item
 # Positive movement directions will mean the logo will move right or down on the
@@ -35,7 +38,16 @@ while True:
     screen.fill((38, 39, 95))
 
     # Increment the x coordinate by 5 every frame update
-    x += 5
+    x += 5 * directionX
+
+    y += 5 * directionY
+
+    # Check if eda object hits right bounds, if it does then reverse direction
+    if x >= 800 - edaLogoSize[0] or x <= 0:
+        directionX *= -1
+
+    if y >= 600 - edaLogoSize[1] or y <= 0:
+        directionY *= -1
 
     # Paste the logo item onto the screen along with the starting coordinates
     screen.blit(edaLogo, (x, y))
