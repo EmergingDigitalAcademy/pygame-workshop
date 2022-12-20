@@ -6,16 +6,17 @@
 
 ## Welcome!
 
-Hello, and welcome to the Emerging Digital Academy: Pygame Workshop. Today we will be going over the basics of creating a "Hello World" project using Pygame!
+Hello, and welcome to the Emerging Digital Academy: Pygame Workshop. Today we
+will be going over the basics of creating a "Hello World" project using Pygame!
 
 ## Requirements
 
 As this is an intro workshop, there are not many requirements except:
 
 - A working installation of Python3 on your machine
-  - [Python Download Link](https://www.python.org/downloads/)
+    - [Python Download Link](https://www.python.org/downloads/)
 - The VS Code text editor installed
-  - [VSCode Download Link](https://code.visualstudio.com/download)
+    - [VSCode Download Link](https://code.visualstudio.com/download)
 - An eagerness to learn
 
 ## Agenda
@@ -24,8 +25,11 @@ The content we will be going over will include:
 
 - What is Pygame?
 - What is a class?
-- Initializing Pygame
 - Building a `Hello World` Application
+    - Initializing Pygame
+    - Loading an item and moving an item
+    - Moving an item with mouse input
+    - Moving an item with keyboard input
 
 ## Resources
 
