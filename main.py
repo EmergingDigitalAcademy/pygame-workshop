@@ -24,7 +24,6 @@ edaLogoSize = edaLogo.get_size()
 # Positive movement directions will mean the logo will move right or down on the
 # Screen, negative will make the logo move left or up
 x, y = 0, 0
-directionX, directionY = 1, 1
 
 # Define the object that controls frame updates
 clock = pygame.time.Clock()
@@ -37,17 +36,12 @@ while True:
     # Define a background color for our screen
     screen.fill((38, 39, 95))
 
-    # Increment the x and y coordinate by 5 every frame update
-    x += 5 * directionX
+    # Get Mouse position to control the logo with the mouse
+    mousePosition = pygame.mouse.get_pos()
 
-    y += 5 * directionY
-
-    # Check if eda object hits right bounds, if it does then reverse direction
-    if x >= 800 - edaLogoSize[0] or x <= 0:
-        directionX *= -1
-
-    if y >= 600 - edaLogoSize[1] or y <= 0:
-        directionY *= -1
+    # Set x and y coordinates to the mouse position
+    x, y = (mousePosition[0] - edaLogoSize[0] / 2), (mousePosition[1] -
+                                                     edaLogoSize[1] / 2)
 
     # Paste the logo item onto the screen along with the starting coordinates
     screen.blit(edaLogo, (x, y))
