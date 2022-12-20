@@ -37,7 +37,7 @@ while True:
     # Define a background color for our screen
     screen.fill((38, 39, 95))
 
-    # Increment the x coordinate by 5 every frame update
+    # Increment the x and y coordinate by 5 every frame update
     x += 5 * directionX
 
     y += 5 * directionY
