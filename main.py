@@ -36,12 +36,28 @@ while True:
     # Define a background color for our screen
     screen.fill((38, 39, 95))
 
-    # Get Mouse position to control the logo with the mouse
-    mousePosition = pygame.mouse.get_pos()
+    # Define the keys object to get the pressed key
+    keys = pygame.key.get_pressed()
 
-    # Set x and y coordinates to the mouse position
-    x, y = (mousePosition[0] - edaLogoSize[0] / 2), (mousePosition[1] -
-                                                     edaLogoSize[1] / 2)
+    # Listen for key presses and move the EDA Logo
+    if keys[pygame.K_RIGHT]:
+        x += 5
+    if keys[pygame.K_LEFT]:
+        x -= 5
+    if keys[pygame.K_DOWN]:
+        y += 5
+    if keys[pygame.K_UP]:
+        y -= 5
+
+    # Create bounds for moving the object with arrows
+    if x <= 0:
+        x = 0
+    if y <= 0:
+        y = 0
+    if x + edaLogoSize[0] >= 800:
+        x = 800 - edaLogoSize[0]
+    if y + edaLogoSize[1] >= 600:
+        y = 600 - edaLogoSize[1]
 
     # Paste the logo item onto the screen along with the starting coordinates
     screen.blit(edaLogo, (x, y))
