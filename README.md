@@ -2,7 +2,7 @@
 
 # Pygame Workshop
 
-<!-- ## [Workshop Video](https://vimeo.com/771394146/cc7597882b) -->
+## [Workshop Video](https://vimeo.com/783133978/e046751706)
 
 ## Welcome!
 
